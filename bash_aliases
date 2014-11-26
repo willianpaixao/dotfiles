@@ -22,3 +22,6 @@ alias update="sudo apt-get update && sudo apt-get --yes upgrade"
 
 alias vi="vim"
 
+alias activate="source .env/bin/activate"
+
+alias runserver="python manage.py runserver"

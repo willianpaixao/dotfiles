@@ -7,5 +7,6 @@
 	di = diff
 	st = status
 	ci = commit
+	lo = log
 [color]
 	ui = auto

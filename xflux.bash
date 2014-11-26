@@ -1,3 +1,3 @@
 #!/bin/bash
 
-xflux 
+xflux -l -1.455 -g -48.502
