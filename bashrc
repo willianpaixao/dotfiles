@@ -92,4 +92,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Call tmux for every interactive shell. Cause tmux is awesome.
-[[ $TERM != "screen" ]] && exec tmux
+if [[ -z "$TMUX" ]]; then
+    ID=$(tmux ls | grep -vm1 attached | cut -d: -f1)
+    if [[ -z "${ID}" ]]; then
+        tmux new-session
+    else
+        tmux attach-session -t "${ID}"
+    fi
+fi
+
