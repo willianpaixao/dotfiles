@@ -91,13 +91,15 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+PATH=/home/willian/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+JAVA_HOME=/home/willian/opt/jdk/
+
 # Call tmux for every interactive shell. Cause tmux is awesome.
 if [[ -z "$TMUX" ]]; then
-    ID=$(tmux ls | grep -vm1 attached | cut -d: -f1)
+    ID=$(/usr/bin/tmux ls | grep -vm1 attached | cut -d: -f1)
     if [[ -z "${ID}" ]]; then
-        tmux new-session
+        /usr/bin/tmux new-session
     else
-        tmux attach-session -t "${ID}"
+        /usr/bin/tmux attach-session -t "${ID}"
     fi
 fi
-
