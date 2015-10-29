@@ -1,0 +1,20 @@
+mailboxes = +INBOX
+
+set from = "willian@ufpa.br"
+set realname= "Willian Paixao"
+set imap_user = "willian@ufpa.br"
+set imap_user = "willian@ufpa.br"
+set folder = "imap://imap.ufpa.br"
+set smtp_url= "smtp://$imap_user@smtp.ufpa.br"
+set ssl_force_tls = yes
+set mbox = +mbox
+set spoolfile = +INBOX
+set record = "=INBOX/Sent"
+set postponed= INBOX/Drafts
+unset ssl_starttls
+
+set sort = threads
+set sort_aux = reverse-last-date-received
+
+source ~/.mutt/gpg.rc
+source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
