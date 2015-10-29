@@ -287,10 +287,24 @@ settings = {
     # Solarized
     theme = "solarized-universal";
     hilight_color = "= %R";
+    autocreate_own_query = "no";
+    use_status_window = "no";
   };
   "fe-text" = { actlist_sort = "refnum"; };
+  "perl/core/scripts" = {
+    spellcheck_languages = "en_US pt_BR de_DE it_IT";
+    spellcheck_default_language = "pt_BR";
+  };
 };
 hilights = (
   { text = "YOUR_NICKNAME"; color = "%M"; nick = "yes"; word = "yes"; }
 );
 ignores = ( { level = "MODES"; servertag = "slack"; } );
+keyboard = (
+  { key = "^1"; id = "change_window"; data = "1"; },
+  { key = "^2"; id = "change_window"; data = "2"; },
+  { key = "^3"; id = "change_window"; data = "3"; },
+  { key = "^7"; id = "change_window"; data = "7"; },
+  { key = "^8"; id = "change_window"; data = "8"; },
+  { key = "^l"; id = "command"; data = "clear "; }
+);
