@@ -85,3 +85,9 @@ set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --l
 # This version uses --status-fd messages
 set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 
+set pgp_use_gpg_agent = yes
+set pgp_sign_as = 1CF90BB8
+set pgp_timeout = 3600
+set crypt_autosign = yes
+set crypt_replyencrypt = yes
+
