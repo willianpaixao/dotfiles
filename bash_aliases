@@ -26,7 +26,5 @@ alias activate="source .env/bin/activate"
 
 alias runserver="python manage.py runserver"
 
-alias hotspot="sudo wvdial -C wvdial.conf"
-
 alias tmux="tmux attach || tmux new-session"
 
