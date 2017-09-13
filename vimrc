@@ -1,9 +1,25 @@
 syntax on
 set number
-set tabstop=8
 set expandtab
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set textwidth=80
 set colorcolumn=81
 
+set shell=/bin/bash
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+
+call vundle#end()
+filetype plugin indent on
+
+set background=dark
+colorscheme solarized
