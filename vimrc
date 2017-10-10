@@ -16,6 +16,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ericpruitt/tmux.vim', {'rtp': 'vim/'}
 Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
