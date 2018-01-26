@@ -103,3 +103,5 @@ if [[ -z "$TMUX" ]]; then
         /usr/bin/tmux attach-session -t "${ID}"
     fi
 fi
+
+complete -C /home/willian/bin/terraform terraform
