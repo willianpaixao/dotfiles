@@ -91,8 +91,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PATH=/home/willian/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
-JAVA_HOME=/home/willian/opt/jdk/
+EDITOR=$(which vim)
 
 # Call tmux for every interactive shell. Cause tmux is awesome.
 if [[ -z "$TMUX" ]]; then
