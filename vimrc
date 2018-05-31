@@ -1,14 +1,34 @@
 syntax on
-set list
-set number
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set textwidth=80
-set colorcolumn=81
+
+set noswapfile
+set nobackup
+set nowritebackup
+
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+
+au BufNewFile,BufRead *.py
+    \ set list |
+    \ set spell |
+    \ set number |
+    \ set hlsearch |
+    \ set cursorline |
+    \ set scrolloff=5 |
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set colorcolumn=80 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+    \ match ExtraWhitespace /\s\+$/ |
+    \ match ExtraWhitespace /^\t\+/ |
+    \ match ExtraWhitespace /\s\+$\| \+\ze\t/ |
+    \ match ExtraWhitespace /[^\t]\zs\t\+/
 
 set shell=/bin/bash
+
+set encoding=utf-8
 
 set nocompatible
 filetype off
@@ -17,13 +37,21 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'ericpruitt/tmux.vim', {'rtp': 'vim/'}
-Plugin 'plasticboy/vim-markdown'
-Plugin 'tpope/vim-fugitive'
+" Plugin 'ericpruitt/tmux.vim', {'rtp': 'vim/'}
+" Plugin 'plasticboy/vim-markdown'
+" Plugin 'tpope/vim-fugitive'
+
+" Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-scripts/indentpython.vim'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
-filetype plugin indent on
+set autoindent
+filetype plugin on
+filetype indent on
 
 set background=dark
 colorscheme solarized
