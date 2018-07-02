@@ -95,12 +95,12 @@ EDITOR=$(which vim)
 
 # Call tmux for every interactive shell. Cause tmux is awesome.
 if [[ -z "$TMUX" ]]; then
-    ID=$(/usr/bin/tmux ls | grep -vm1 attached | cut -d: -f1)
+    ID=$(tmux ls | grep -vm1 attached | cut -d: -f1)
     if [[ -z "${ID}" ]]; then
-        /usr/bin/tmux new-session
+        tmux new-session
     else
-        /usr/bin/tmux attach-session -t "${ID}"
+        tmux attach-session -t "${ID}"
     fi
 fi
 
-complete -C /home/willian/bin/terraform terraform
+complete -o default -o nospace -F _git g

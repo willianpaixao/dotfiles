@@ -5,9 +5,11 @@ alias .5="cd ../../../.."
 
 alias grep="grep --color=auto"
 
-alias ls="ls --color=auto"
-alias la="ls --all --color=auto"
-alias ll="ls --all --human-readable -l --color=auto"
+alias g="git"
+
+alias ls="ls -G"
+alias la="ls -a -G"
+alias ll="ls -a -G -h -l"
 
 alias mkdir="mkdir --parents --verbose"
 
