@@ -3,11 +3,11 @@
 	email = willian@ufpa.br
 	signingkey = B3532C04A20E73AF
 [core]
-	editor = /usr/bin/vim
+	editor = vim
 [alias]
 	ci = commit
 	di = diff
-	fe = fetch --all
+	fe = fetch --all --prune
         lo = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	st = status
 [color]
@@ -16,3 +16,12 @@
 	statusHints = false
 [merge]
 	stat = true
+	tool = vimdiff
+[fetch]
+	prune = true
+[status]
+	submoduleSummary = true
+[diff]
+	tool = vimdiff
+[commit]
+	gpgSign = true

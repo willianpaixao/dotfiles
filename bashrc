@@ -16,6 +16,9 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# append timestamp to the command history
+HISTTIMEFORMAT="%d/%m/%y %T "
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -91,16 +94,14 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Defines Vim as default text editor.
 EDITOR=$(which vim)
 
 # Call tmux for every interactive shell. Cause tmux is awesome.
-if [[ -z "$TMUX" ]]; then
+if [ -z "$TMUX" ]; then
+    tmux
+else
     ID=$(tmux ls | grep -vm1 attached | cut -d: -f1)
-    if [[ -z "${ID}" ]]; then
-        tmux new-session
-    else
-        tmux attach-session -t "${ID}"
-    fi
+    tmux attach-session -t "${ID}"
 fi
 
-complete -o default -o nospace -F _git g
