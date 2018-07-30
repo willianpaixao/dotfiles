@@ -11,7 +11,7 @@ alias ls="ls -G"
 alias la="ls -a -G"
 alias ll="ls -a -G -h -l"
 
-alias mkdir="mkdir --parents --verbose"
+alias mkdir="mkdir -p -v"
 
 alias mount="mount | column -t"
 
