@@ -23,6 +23,7 @@ HISTTIMEFORMAT="%d/%m/%y %T "
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+shopt -s cdspell
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
@@ -98,10 +99,4 @@ fi
 EDITOR=$(which vim)
 
 # Call tmux for every interactive shell. Cause tmux is awesome.
-if [ -z "$TMUX" ]; then
-    tmux
-else
-    ID=$(tmux ls | grep -vm1 attached | cut -d: -f1)
-    tmux attach-session -t "${ID}"
-fi
-
+tmux a || tmux

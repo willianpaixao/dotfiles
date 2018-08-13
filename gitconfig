@@ -5,12 +5,14 @@
 [core]
 	editor = vim
 [alias]
+        aliases = config --get-regexp alias
 	ci = commit
 	di = diff
+	dt = difftool
 	fe = fetch --all --prune
         lo = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	st = status
 	dt = difftool
+	st = status
 [color]
 	ui = auto
 [advice]
@@ -24,7 +26,5 @@
 	submoduleSummary = true
 [diff]
 	tool = vimdiff
-[commit]
-	gpgSign = true
 [difftool]
 	prompt = false
