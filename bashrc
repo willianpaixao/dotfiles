@@ -24,6 +24,7 @@ HISTTIMEFORMAT="%d/%m/%y %T "
 shopt -s checkwinsize
 
 shopt -s cdspell
+
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
@@ -93,6 +94,10 @@ fi
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
+fi
+
+if [ -f ~/.bash_completion ] && ! shopt -oq posix; then
+    . ~/.bash_completion
 fi
 
 # Defines Vim as default text editor.

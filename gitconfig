@@ -1,7 +1,7 @@
 [user]
 	name = Willian Paixao
 	email = willian@ufpa.br
-	signingkey = B3532C04A20E73AF
+	signingkey = 5C11B6A8D107050B777A72ADCF45CB8501C3ED92
 [core]
 	editor = vim
 [alias]
@@ -28,3 +28,5 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+[commit]
+	gpgSign = true
