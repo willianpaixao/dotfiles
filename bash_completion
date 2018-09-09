@@ -1,1 +1,4 @@
-complete -o default -o nospace -F _git g
+# OSX
+complete -o default -o nospace -F __git_complete g
+# Linux
+complete -o bashdefault -o default -o nospace -F __git_wrap__git_main g
