@@ -89,6 +89,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.bash_completion ] && ! shopt -oq posix; then
+    . ~/.bash_completion
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -96,12 +100,26 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -f ~/.bash_completion ] && ! shopt -oq posix; then
-    . ~/.bash_completion
-fi
-
 # Defines Vim as default text editor.
 EDITOR=$(which vim)
 
-# Call tmux for every interactive shell. Cause tmux is awesome.
-tmux a || tmux
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/willian/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/willian/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/willian/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/willian/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+case "$TERM" in
+xterm-256color)
+    tmux
+    ;;
+esac
