@@ -9,6 +9,7 @@
 	co = checkout
 	di = diff
 	dt = difftool
+	dt = difftool
 	fe = fetch --all --prune --tags
 	mwps = push -o merge_request.create -o merge_request.target=master -o merge_request.merge_when_pipeline_succeeds
 	st = status
@@ -33,3 +34,7 @@
 	gpgSign = true
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
+[tag]
+	gpgSign = true
+[push]
+	gpgSign = if-asked
