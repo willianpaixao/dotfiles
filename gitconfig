@@ -1,40 +1,44 @@
 [user]
-	name = Willian Paixao
-	email = willian@ufpa.br
-	signingKey = 48EF1764
+        name = Willian Paixao
+        email = willian@ufpa.br
+        signingKey = 48EF1764
 [core]
-	editor = vim
+        editor = vim
 [alias]
-	ci = commit
-	co = checkout
-	di = diff
-	dt = difftool
-	dt = difftool
-	fe = fetch --all --prune --tags
-	mwps = push -o merge_request.create -o merge_request.target=master -o merge_request.merge_when_pipeline_succeeds
-	st = status
+        ci = commit
+        co = checkout
+        di = diff
+        dt = difftool
+        dt = difftool
+        fe = fetch --all --prune --tags
+        mwps = push -o merge_request.create -o merge_request.target=master -o merge_request.merge_when_pipeline_succeeds
+        st = status
         aliases = config --get-regexp alias
         lo = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 [color]
-	ui = auto
+        ui = auto
 [advice]
-	statusHints = false
+        statusHints = false
 [merge]
-	stat = true
-	tool = vimdiff
+        stat = true
+        tool = vimdiff
 [fetch]
-	prune = true
+        prune = true
 [status]
-	submoduleSummary = true
+        submoduleSummary = true
 [diff]
-	tool = vimdiff
+        tool = vimdiff
 [difftool]
-	prompt = false
+        prompt = false
 [commit]
-	gpgSign = true
+        gpgSign = true
 [url "git@gitlab.com:"]
-	insteadOf = https://gitlab.com/
+        insteadOf = https://gitlab.com/
 [tag]
-	gpgSign = true
+        gpgSign = true
 [push]
-	gpgSign = if-asked
+        gpgSign = if-asked
+
+; include for all repositories inside $HOME/dev/blockdaemon/
+[includeIf "gitdir:~/dev/blockdaemon/"]
+        path = ~/dev/blockdaemon/.gitconfig

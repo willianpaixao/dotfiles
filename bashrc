@@ -128,14 +128,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source /usr/share/bash-completion/completions/git
-source ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 export JAVA_HOME=$HOME/opt/jdk1.8.0_251
-export PATH=${PATH}:$HOME/.local/bin:$JAVA_HOME/bin:/usr/local/go/bin
+export PATH=${PATH}:$HOME/.local/bin:$HOME/.cargo/bin:$JAVA_HOME/bin:/usr/local/go/bin
 
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+source "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/willian/opt/google-cloud-sdk/path.bash.inc' ]; then . '/home/willian/opt/google-cloud-sdk/path.bash.inc'; fi
