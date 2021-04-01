@@ -128,12 +128,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
+source <(kubectl completion bash)
+
+source /usr/share/bash-completion/completions/git
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 export JAVA_HOME=$HOME/opt/jdk1.8.0_251
 export PATH=${PATH}:$HOME/.local/bin:$HOME/.cargo/bin:$JAVA_HOME/bin:/usr/local/go/bin
 
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+
 source "$HOME/.cargo/env"
 
 export NVM_DIR="$HOME/.nvm"

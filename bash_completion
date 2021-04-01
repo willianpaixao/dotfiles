@@ -1,1 +1,6 @@
 complete -o bashdefault -o default -o nospace -F __git_wrap__git_main g
+
+complete -C /home/willian/.local/bin/terraform terraform
+complete -C /home/willian/.local/bin/terraform tf
+
+complete -F __start_kubectl k
