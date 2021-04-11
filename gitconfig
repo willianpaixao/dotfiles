@@ -1,7 +1,7 @@
 [user]
         name = Willian Paixao
         email = willian@ufpa.br
-        signingKey = 48EF1764
+        signingKey = 9CA5037C
 [core]
         editor = vim
 [alias]

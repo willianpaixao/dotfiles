@@ -27,3 +27,7 @@ alias vi="vim"
 alias activate="source .env/bin/activate"
 
 alias runserver="python manage.py runserver"
+
+alias k=kubectl
+
+alias tf=terraform
